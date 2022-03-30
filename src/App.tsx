@@ -24,7 +24,7 @@ const App = () => {
         ]}
       />
       <Content>Content</Content>
-      <Footer>Footer</Footer>
+      <Footer style={{ textAlign: "center" }}>Password Generater ©2022</Footer>
     </Layout>
   );
 };
