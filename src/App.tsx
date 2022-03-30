@@ -1,5 +1,15 @@
+import { Layout } from "antd";
+
+const { Header, Footer, Content } = Layout;
+
 const App = () => {
-  return <div className="App">Password Generator</div>;
+  return (
+    <Layout>
+      <Header>Header</Header>
+      <Content>Content</Content>
+      <Footer>Footer</Footer>
+    </Layout>
+  );
 };
 
 export default App;
