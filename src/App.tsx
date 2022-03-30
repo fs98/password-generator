@@ -1,11 +1,13 @@
-import { Layout } from "antd";
+import "antd/dist/antd.css";
 
-const { Header, Footer, Content } = Layout;
+import { Layout, PageHeader, Button } from "antd";
+
+const { Footer, Content } = Layout;
 
 const App = () => {
   return (
     <Layout>
-      <Header>Header</Header>
+      <PageHeader className="site-page-header" title="Password Generator" />
       <Content>Content</Content>
       <Footer>Footer</Footer>
     </Layout>
