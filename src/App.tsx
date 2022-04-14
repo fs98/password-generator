@@ -1,4 +1,4 @@
-import "antd/dist/antd.css";
+import "antd/dist/antd.min.css";
 
 import { Layout, PageHeader, Button } from "antd";
 import { GithubOutlined } from "@ant-design/icons";
