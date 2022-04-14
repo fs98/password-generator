@@ -19,12 +19,12 @@ const App = () => {
             href="https://github.com/fs98/password-generator"
             target="_blank"
           >
-            <GithubOutlined style={{ fontSize: "24px", color: "#08c" }} />
+            <GithubOutlined className="text-2xl" />
           </Button>,
         ]}
       />
       <Content>Content</Content>
-      <Footer style={{ textAlign: "center" }}>Password Generater ©2022</Footer>
+      <Footer className="text-center">Password Generater ©2022</Footer>
     </Layout>
   );
 };
