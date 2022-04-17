@@ -9,7 +9,7 @@ const { Footer, Content } = Layout;
 
 const App = (): JSX.Element => {
   return (
-    <Layout>
+    <Layout className="h-screen">
       <PageHeader
         className="site-page-header"
         title="Password Generator"
