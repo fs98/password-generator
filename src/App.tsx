@@ -3,6 +3,7 @@ import 'antd/dist/antd.min.css';
 
 import { Layout, PageHeader, Button } from 'antd';
 import { GithubOutlined } from '@ant-design/icons';
+import { PasswordGenerator } from './components/PasswordGenerator';
 
 const { Footer, Content } = Layout;
 
@@ -24,7 +25,9 @@ const App = (): JSX.Element => {
           </Button>,
         ]}
       />
-      <Content>Content</Content>
+      <Content>
+        <PasswordGenerator />
+      </Content>
       <Footer className="text-center">Password Generater ©2022</Footer>
     </Layout>
   );
