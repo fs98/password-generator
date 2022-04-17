@@ -4,7 +4,7 @@ Test project to fill up my portfolio
 
 # Demo link
 
-Coming soon..
+https://fs98.github.io/password-generator/
 
 # List of commits
 
