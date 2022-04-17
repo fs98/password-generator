@@ -25,7 +25,7 @@ const App = (): JSX.Element => {
           </Button>,
         ]}
       />
-      <Content>
+      <Content className="mx-5">
         <PasswordGenerator />
       </Content>
       <Footer className="text-center">Password Generater ©2022</Footer>
