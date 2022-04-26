@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
-import { Form, Button, Card, Alert } from 'antd';
-import type { FormProps } from 'antd';
+import { Form, Button, Card, Alert, Checkbox } from 'antd';
+import type { CheckboxOptionType } from 'antd';
 
 export const PasswordGenerator = (): JSX.Element => {
   const [password, setPassword] = useState('Not Generated');
 
-  const onFinish = (values: FormProps): void => {
-    console.log('Success:', values);
-
-    const numbers = '0123456789';
+  const onFinish = (values: {
+    specialCharacters: CheckboxOptionType;
+  }): void => {
     const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
     const specialCharacters = '!@#$%^&*()';
 
-    const chars = numbers + letters + specialCharacters;
+    let chars = letters + numbers;
+
+    if (values.specialCharacters) {
+      chars += specialCharacters;
+    }
 
     const passwordLength = 12;
 
@@ -48,6 +52,16 @@ export const PasswordGenerator = (): JSX.Element => {
         onFinishFailed={onFinishFailed}
         autoComplete="off"
       >
+        <Form.Item
+          name="specialCharacters"
+          valuePropName="checked"
+          wrapperCol={{
+            offset: 4,
+            span: 16,
+          }}
+        >
+          <Checkbox>Include special characters</Checkbox>
+        </Form.Item>
         <Form.Item
           wrapperCol={{
             offset: 4,
