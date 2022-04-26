@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Form, Button, Card, Alert, Checkbox } from 'antd';
-import type { CheckboxOptionType } from 'antd';
+
+interface FormValues {
+  specialCharacters: boolean;
+  numbers: boolean;
+}
 
 export const PasswordGenerator = (): JSX.Element => {
   const [password, setPassword] = useState('Not Generated');
 
-  const onFinish = (values: {
-    specialCharacters: CheckboxOptionType;
-    numbers: CheckboxOptionType;
-  }): void => {
+  const onFinish = (values: FormValues): void => {
     const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const numbers = '0123456789';
     const specialCharacters = '!@#$%^&*()';
