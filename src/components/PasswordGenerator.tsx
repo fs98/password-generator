@@ -7,15 +7,20 @@ export const PasswordGenerator = (): JSX.Element => {
 
   const onFinish = (values: {
     specialCharacters: CheckboxOptionType;
+    numbers: CheckboxOptionType;
   }): void => {
     const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     const numbers = '0123456789';
     const specialCharacters = '!@#$%^&*()';
 
-    let chars = letters + numbers;
+    let chars = letters;
 
     if (values.specialCharacters) {
       chars += specialCharacters;
+    }
+
+    if (values.numbers) {
+      chars += numbers;
     }
 
     const passwordLength = 12;
@@ -55,12 +60,24 @@ export const PasswordGenerator = (): JSX.Element => {
         <Form.Item
           name="specialCharacters"
           valuePropName="checked"
+          initialValue={false}
           wrapperCol={{
             offset: 4,
             span: 16,
           }}
         >
           <Checkbox>Include special characters</Checkbox>
+        </Form.Item>
+        <Form.Item
+          name="numbers"
+          valuePropName="checked"
+          initialValue
+          wrapperCol={{
+            offset: 4,
+            span: 16,
+          }}
+        >
+          <Checkbox>Include numbers</Checkbox>
         </Form.Item>
         <Form.Item
           wrapperCol={{
