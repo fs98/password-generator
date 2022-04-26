@@ -7,7 +7,7 @@ interface FormValues {
 }
 
 export const PasswordGenerator = (): JSX.Element => {
-  const [password, setPassword] = useState('Not Generated');
+  const [password, setPassword] = useState<null | string>(null);
 
   const onFinish = (values: FormValues): void => {
     const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -86,7 +86,7 @@ export const PasswordGenerator = (): JSX.Element => {
             span: 16,
           }}
         >
-          <Alert message={password} type="info" />
+          <Alert message={password ?? '...'} type="info" />
         </Form.Item>
 
         <Form.Item
