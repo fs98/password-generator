@@ -26,7 +26,8 @@ export const PasswordGenerator = (): JSX.Element => {
     }
   };
 
-  const onFinishFailed = (errorInfo: any): void => {
+  // I have no idea if this errorInfo should be the type of object
+  const onFinishFailed = (errorInfo: object): void => {
     console.log('Failed:', errorInfo);
   };
 
