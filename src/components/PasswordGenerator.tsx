@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Card, Alert, Checkbox } from 'antd';
+import { ValidateErrorEntity } from 'antd/node_modules/rc-field-form/lib/interface';
 
 interface FormValues {
   specialCharacters: boolean;
@@ -37,8 +38,8 @@ export const PasswordGenerator = (): JSX.Element => {
   };
 
   // I have no idea if this errorInfo should be the type of object
-  const onFinishFailed = (errorInfo: object): void => {
-    console.log('Failed:', errorInfo);
+  const onFinishFailed = (errorInfo: ValidateErrorEntity): void => {
+    console.log('Failed:', errorInfo.errorFields);
   };
 
   return (
