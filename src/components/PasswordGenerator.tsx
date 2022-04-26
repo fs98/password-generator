@@ -6,11 +6,16 @@ export const PasswordGenerator = (): JSX.Element => {
   const [password, setPassword] = useState('Not Generated');
 
   const onFinish = (values: FormProps): void => {
-    // console.log('Success:', values);
+    console.log('Success:', values);
 
-    const chars =
-      '0123456789abcdefghijklmnopqrstuvwxyz!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const specialCharacters = '!@#$%^&*()';
+
+    const chars = numbers + letters + specialCharacters;
+
     const passwordLength = 12;
+
     let generatedPassword = '';
 
     for (let i = 0; i <= passwordLength; i += 1) {
