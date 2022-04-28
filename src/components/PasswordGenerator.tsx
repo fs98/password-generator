@@ -48,6 +48,10 @@ export const PasswordGenerator = (): JSX.Element => {
         name="basic"
         wrapperCol={{
           span: 16,
+          offset: 0,
+          md: {
+            offset: 4,
+          },
         }}
         initialValues={{
           remember: true,
