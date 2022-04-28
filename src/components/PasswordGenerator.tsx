@@ -1,11 +1,39 @@
 import React, { useState } from 'react';
-import { Form, Button, Card, Alert, Checkbox } from 'antd';
+import { Form, Button, Card, Alert, Checkbox, Select } from 'antd';
 import { ValidateErrorEntity } from 'antd/node_modules/rc-field-form/lib/interface';
 
 interface FormValues {
   specialCharacters: boolean;
   numbers: boolean;
+  length: number;
 }
+
+const lengthOptions = [
+  {
+    label: '8',
+    value: 8,
+  },
+  {
+    label: '10',
+    value: 10,
+  },
+  {
+    label: '12',
+    value: 12,
+  },
+  {
+    label: '14',
+    value: 14,
+  },
+  {
+    label: '16',
+    value: 16,
+  },
+  {
+    label: '32',
+    value: 32,
+  },
+];
 
 export const PasswordGenerator = (): JSX.Element => {
   const [password, setPassword] = useState<null | string>(null);
@@ -25,11 +53,11 @@ export const PasswordGenerator = (): JSX.Element => {
       chars += numbers;
     }
 
-    const passwordLength = 12;
+    const passwordLength = values.length;
 
     let generatedPassword = '';
 
-    for (let i = 0; i <= passwordLength; i += 1) {
+    for (let i = 0; i < passwordLength; i += 1) {
       const randomNumber = Math.floor(Math.random() * chars.length);
       generatedPassword += chars.substring(randomNumber, randomNumber + 1);
 
@@ -70,6 +98,30 @@ export const PasswordGenerator = (): JSX.Element => {
 
         <Form.Item name="numbers" valuePropName="checked" initialValue>
           <Checkbox>Include numbers</Checkbox>
+        </Form.Item>
+
+        <Form.Item
+          initialValue={8}
+          name="length"
+          labelCol={{
+            span: 2.5,
+            offset: 0,
+            md: {
+              span: 2,
+              offset: 2,
+            },
+          }}
+          wrapperCol={{
+            span: 16,
+            offset: 0,
+            md: {
+              span: 16,
+              offset: 0,
+            },
+          }}
+          label="Length"
+        >
+          <Select options={lengthOptions} />
         </Form.Item>
 
         <Form.Item>
