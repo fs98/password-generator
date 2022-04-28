@@ -46,9 +46,6 @@ export const PasswordGenerator = (): JSX.Element => {
     <Card className="h-full">
       <Form
         name="basic"
-        labelCol={{
-          span: 4,
-        }}
         wrapperCol={{
           span: 16,
         }}
@@ -63,39 +60,19 @@ export const PasswordGenerator = (): JSX.Element => {
           name="specialCharacters"
           valuePropName="checked"
           initialValue={false}
-          wrapperCol={{
-            offset: 4,
-            span: 16,
-          }}
         >
           <Checkbox>Include special characters</Checkbox>
         </Form.Item>
-        <Form.Item
-          name="numbers"
-          valuePropName="checked"
-          initialValue
-          wrapperCol={{
-            offset: 4,
-            span: 16,
-          }}
-        >
+
+        <Form.Item name="numbers" valuePropName="checked" initialValue>
           <Checkbox>Include numbers</Checkbox>
         </Form.Item>
-        <Form.Item
-          wrapperCol={{
-            offset: 4,
-            span: 16,
-          }}
-        >
+
+        <Form.Item>
           <Alert message={password ?? '...'} type="info" />
         </Form.Item>
 
-        <Form.Item
-          wrapperCol={{
-            offset: 4,
-            span: 16,
-          }}
-        >
+        <Form.Item>
           <Button type="primary" htmlType="submit">
             Generate Password
           </Button>
