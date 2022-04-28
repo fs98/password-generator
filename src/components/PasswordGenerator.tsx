@@ -65,7 +65,6 @@ export const PasswordGenerator = (): JSX.Element => {
     }
   };
 
-  // I have no idea if this errorInfo should be the type of object
   const onFinishFailed = (errorInfo: ValidateErrorEntity): void => {
     console.log('Failed:', errorInfo.errorFields);
   };
@@ -132,6 +131,7 @@ export const PasswordGenerator = (): JSX.Element => {
           <Button type="primary" htmlType="submit">
             Generate Password
           </Button>
+
           <Button htmlType="button" className="ml-3" disabled>
             Copy Password
           </Button>
