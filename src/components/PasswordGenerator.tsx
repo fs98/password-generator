@@ -36,7 +36,7 @@ const lengthOptions = [
 ];
 
 export const PasswordGenerator = (): JSX.Element => {
-  const [password, setPassword] = useState<null | string>(null);
+  const [password, setPassword] = useState<string>('...');
 
   const onFinish = (values: FormValues): void => {
     const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -124,7 +124,7 @@ export const PasswordGenerator = (): JSX.Element => {
         </Form.Item>
 
         <Form.Item>
-          <Alert message={password ?? '...'} type="info" />
+          <Alert message={password} type="info" />
         </Form.Item>
 
         <Form.Item>
