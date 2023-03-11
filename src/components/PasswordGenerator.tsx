@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Card, Alert, Checkbox, Select } from 'antd';
-import { ValidateErrorEntity } from 'antd/node_modules/rc-field-form/lib/interface';
+import { ValidateErrorEntity } from 'rc-field-form/lib/interface';
 
 interface FormValues {
   specialCharacters: boolean;
