@@ -11,6 +11,7 @@
     "@types/jest": "^27.4.1",
     "@types/node": "^16.11.26",
     "antd": "^4.19.3",
+    "rc-field-form": "^1.28.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-scripts": "5.0.0",
